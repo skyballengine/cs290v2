@@ -1,0 +1,376 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+/*   ----- Imports  -----  */
+/* Add fonts from the app's server 
+    @font-face {                
+      font-family: 'Anuphan', sans-serif;
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+  */
+@import url("https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tahoma:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arial:wght@300;400&display=swap");
+
+/* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+/* npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize
+        */
+
+/* Component-specific stylesheets, if any.    
+  */
+@import "component1.css";
+
+/*   ----- Variables  -----  */
+:root {
+  --color1: #a7ddf2;
+  --color2: #465902;
+  --color3: #1e2601;
+  --color4: #c1d911cc;
+  --color5: #e6f288;
+  --header-color:rgb(213, 160, 61);
+  --custom-size: 200%;
+  --custom-embellishment-name: ;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {
+  /* Can alternatively define in html {} or :root {} */
+  background-color: ;
+  background-image: url(images/biodiversity-plants-flowers-1.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color2);
+  font-family: "Anuphan", sans-serif; /* Define with at least one font name and its related generic family name.*/
+  margin: 1% 2%;
+  padding: 1.5%;
+  border: 10%;
+  max-width: 100%;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  color: var(--color4);
+  background-color: ;
+  margin: 0%;
+  padding-bottom: 30px;
+}
+main {
+  /*margin: 6%;
+  border: 5%;
+  padding: 10px 5px;*/
+  background-color: var(--color5);
+}
+section {
+  /* background-color: whitesmoke; */
+  padding: 1% 3%;
+}
+article {
+  border-top: 2px solid var(--header-color);
+}
+#topic1 h3 {
+  color: brown;
+}
+#topic2 {
+}
+div {
+}
+aside {
+}
+footer {
+  background-color: var(--color1);
+  /*margin: 6%;
+  padding: 1.5%;*/
+  padding: 10px;
+  padding-top: 10px;
+}
+
+/* ----- Anchors ----- Text links */
+a {
+}
+a:link {
+  color: rgb(0, 128, 96);
+  text-decoration: none;
+  border: 1px solid orange;
+}
+a:hover {
+  color: aquamarine;
+  background-color: rgb(0, 128, 96);
+}
+a:active {
+  color: rgb(159, 27, 27);
+}
+a:visited {
+  color: purple;
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  text-align: center;
+  padding-bottom:75px;
+  text-decoration: none;
+}
+nav a {
+  background-color: rgb(213, 160, 61);
+  border: 2px solid rgb(213, 160, 61);
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-right: 3px;
+  padding: 3px 20px 5px 20px;
+  text-decoration: none;
+  border: 10%;
+  margin: 1%;
+}
+nav a:hover {
+  background-color: white;
+  color: black;
+}
+nav a:visited {
+  color: var(--color5);
+}
+
+
+/*  -----  Typography  ----- */
+p {
+}
+br {
+}
+ol,
+ul,
+dl {
+}
+li {
+}
+dt {
+}
+dd {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Anuphan", sans-serif;
+  color: rgb(213, 160, 61);
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}
+
+abbr {
+}
+acronym {
+}
+address {
+}
+blockquote {
+}
+q {
+}
+cite {
+}
+em {
+}
+hr {
+}
+mark {
+}
+s {
+}
+span {
+}
+strong {
+}
+sub {
+}
+sup {
+}
+time {
+}
+
+/*  ----- Coding or instructional typography ----- */
+pre {
+}
+code {
+}
+kbd {
+}
+samp {
+}
+var {
+}
+del {
+}
+ins {
+}
+
+/*  ----- Table ----- */
+table {
+  border-collapse: collapse;
+  max-width: 50%;
+  text-align: center;
+  margin: 0 auto;
+}
+caption {
+  background-color: chocolate;
+  border: 1px solid gray;
+  color: lavender;
+  font-weight: bold;
+  padding: 1% 0;
+}
+thead {
+}
+tbody {
+  text-align: center;
+}
+tfoot {
+}
+tr {
+  border: 1px solid lavender;
+}
+tr:nth-child(even) {
+}
+tr th {
+  border: 1px solid lavender;
+}
+tr td {
+  border: 1px solid lavender;
+  background-color: lightgray;
+  padding: 1%;
+  text-align: right;
+}
+td:nth-child(1) {
+}
+colgroup {
+}
+data {
+}
+datalist {
+}
+
+/*  ----- Form ----- */
+form {
+}
+fieldset {
+}
+legend {
+}
+label {
+}
+button {
+}
+input {
+}
+output {
+}
+meter {
+}
+progress {
+}
+select {
+}
+optgroup {
+}
+option {
+}
+textarea {
+}
+
+/* ----- Media ----- */
+figure {
+}
+figcaption {
+}
+figure img {
+}
+svg {
+}
+picture {
+}
+source {
+}
+iframe {
+}
+video {
+}
+audio {
+}
+embed {
+}
+object {
+}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.gallery {
+  display: flex;
+  flex-flow:row wrap;
+  color: var(--color2);
+}
+
+.floatright {
+}
+.floatleft {
+}
+.center-middle {
+}
+
+.ten {
+}
+.twenty {
+}
+.thirty {
+}
+.forty {
+}
+.fifty {
+}
+.sixty {
+}
+.seventy {
+}
+.eighty {
+}
+
+.radius {
+}
+.circle {
+}
+.boxshadow {
+}
+.tshadow {
+}
+.gradient {
+}
+.shape {
+}
+
+@keyframes App-logo {
+}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {
+}
