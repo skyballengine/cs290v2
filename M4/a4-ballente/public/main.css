@@ -265,17 +265,61 @@ datalist {
 }
 
 /*  ----- Form ----- */
-form {
+form, button, input, select, textarea {
+  font-family: "Anuphan", sans-serif;
+  color:#a7ddf2;
 }
 fieldset {
+  border: 2px solid var(--color5);
+  background-color: whitesmoke;
+  margin-bottom: 3%;
+}
+:focus {
+  background-color: honeydew;
+}
+*:required {
+  border:2px solid green;
 }
 legend {
+  background-color: whitesmoke;
+  border: 2px solid var(--color5);
+  font-size: 90%;
 }
 label {
+  color:#465902;
+  display: block;
+  margin-top: 4%;
+  font-size: 100%;
+}
+
+label.required:after {
+  content:" *";
+  color:red;
 }
 button {
+  font-size:110%;
+  padding:1%;
+  font-family:inherit;
 }
 input {
+  padding:2%;
+  font-size: 120%;
+  font-family:inherit;
+}
+input:invalid {
+  border:3px solid red;
+}
+input:valid {
+  border:2px solid green;
+}
+input::placeholder {
+  color:darkgray.
+}
+input:disabled {
+  background: repeating-linear-gradient(142deg, #CCCCCC, #CCCCCC 4px, #999999 22px);
+}
+input:enabled {
+  background: white;
 }
 output {
 }
@@ -284,12 +328,21 @@ meter {
 progress {
 }
 select {
+  font-size:110%;
+  padding:1%;
+  font-family:inherit;
 }
 optgroup {
 }
 option {
+  font-size:110%;
+  padding:1%;
+  font-family:inherit;
 }
 textarea {
+  font-size:110%;
+  padding:1%;
+  font-family:inherit;
 }
 
 /* ----- Media ----- */
