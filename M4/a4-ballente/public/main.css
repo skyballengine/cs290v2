@@ -65,7 +65,8 @@ main {
   background-color: var(--color5);
 }
 section {
-  /* background-color: whitesmoke; */
+  border: 2px solid var(--color5);
+  background-color: var(--color5);
   padding: 1% 3%;
 }
 article {
@@ -81,7 +82,9 @@ div {
 aside {
 }
 footer {
-  background-color: var(--color1);
+  border: 2px solid var(--color5);
+  background-color: var(--color5);
+  color:rgb(213, 160, 61);
   /*margin: 6%;
   padding: 1.5%;*/
   padding: 10px;
@@ -132,6 +135,7 @@ nav a:hover {
 }
 nav a:visited {
   color: var(--color5);
+  border: 2px solid rgb(213, 160, 61);
 }
 
 
@@ -165,6 +169,7 @@ h1 {
 h2 {
 }
 h3 {
+  width: 100%;
 }
 h4 {
 }
@@ -267,59 +272,79 @@ datalist {
 /*  ----- Form ----- */
 form, button, input, select, textarea {
   font-family: "Anuphan", sans-serif;
-  color:#a7ddf2;
+  color:rgb(213, 160, 61);
+}
+form {
+  border: 2px solid var(--color5);
+  background-color: var(--color5);
 }
 fieldset {
+  color: var(--color2);
   border: 2px solid var(--color5);
-  background-color: whitesmoke;
+  background-color: var(--color5);
   margin-bottom: 3%;
+  padding: 2%;
 }
 :focus {
   background-color: honeydew;
+  border:2px solid rgb(213, 160, 61);
 }
 *:required {
-  border:2px solid green;
+  border:2px solid rgb(184, 3, 3);
 }
 legend {
-  background-color: whitesmoke;
-  border: 2px solid var(--color5);
-  font-size: 90%;
+  background-color:rgb(213, 160, 61);
+  border: 2px solid rgb(213, 160, 61);
+  color: var(--color5);
+  margin: 2% -5%;
+  padding: 1% 3%;
+  font-size: 110%;
+  font-style: bold;
 }
 label {
   color:#465902;
   display: block;
   margin-top: 4%;
   font-size: 100%;
+  padding-bottom: 2%;
+  border:1px;
 }
 
 label.required:after {
   content:" *";
-  color:red;
+  color:green;
 }
 button {
   font-size:110%;
-  padding:1%;
+  background-color: var(--color2);
+  padding:2% 4%;
   font-family:inherit;
+  margin: 1px;
+  border:1px;
 }
+
 input {
   padding:2%;
   font-size: 120%;
   font-family:inherit;
+  padding-left: 2%;
+  background-color: #caebf7;
+  border:1px;
 }
 input:invalid {
-  border:3px solid red;
+  border:2px solid rgb(184, 3, 3);
 }
 input:valid {
-  border:2px solid green;
+  border:2px solid rgb(25, 117, 25);
 }
 input::placeholder {
-  color:darkgray.
+  color:rgb(120, 118, 118);
 }
 input:disabled {
   background: repeating-linear-gradient(142deg, #CCCCCC, #CCCCCC 4px, #999999 22px);
 }
 input:enabled {
-  background: white;
+  background:;
 }
 output {
 }
@@ -329,28 +354,54 @@ progress {
 }
 select {
   font-size:110%;
+  background-color: #caebf7;
   padding:1%;
   font-family:inherit;
+  color:rgb(120, 118, 118); 
 }
 optgroup {
 }
 option {
   font-size:110%;
+  background-color: #caebf7;
   padding:1%;
   font-family:inherit;
 }
 textarea {
   font-size:110%;
+  color: var(--color2);
+  background-color: #caebf7;
   padding:1%;
   font-family:inherit;
+  width: 100%;
+}
+textarea:valid {
+  border:2px solid rgb(25, 117, 25);
 }
 
 /* ----- Media ----- */
 figure {
+  color: var(--color2);
+  margin:1%; 
+  padding:0;
+  width:30%;    /* Adjust the percentage based on the combined width of borders and and padding. */
+  float:;
+  border:1px solid gray 50%;
 }
 figcaption {
+  color: var(--color2);
+  font-size:80%;
+  text-align:left;
+  display:block;
+  padding:1%;
+  width:100%;
+
 }
 figure img {
+  color: var(--color2);
+  width:80%; 
+  margin:0; 
+  padding:0;
 }
 svg {
 }
@@ -372,7 +423,7 @@ object {
 /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
 .gallery {
   display: flex;
-  flex-flow:row wrap;
+  flex-flow: row wrap;
   color: var(--color2);
 }
 

@@ -7,6 +7,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
+    <style>
+        fieldset {
+            padding-top: -10%;
+            width:50%;
+        }
+    </style>
     
 </head>
 <body>
@@ -24,29 +30,72 @@
         <h2>
             Contact
         </h2>
-        <article>
-            <!-- <form action="" method="POST">
-                <fieldset>
-                    <legend>Testing...</legend>
-                    <input type="checkbox" name="fruit" value="apple">
-                </fieldset>
-
-            </form> -->
-            <form action="GET">
-                <input type="radio" name="visit"  id="yes" value="yes">
+        <p style="padding:2%; padding-bottom: 4%;margin:1%;font-size: 125%;">
+            Let us know if you have any feedback or suggestions
+        </p>
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Name</legend>
+                <label for="name" class="required">
+                    Type Name
+                </label>
+                <input type="text" name="name" id="name" autofocus placeholder="Plain text" required>
+            </fieldset>
+            <fieldset>
+                <legend>Email</legend>
+                <label for="email" class="required">
+                    Type Email
+                </label>
+                <input type="email" name="email" id="email" placeholder="name@yourdomain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </fieldset>
+            <fieldset style="width:50%;">
+                <legend>Message</legend>
+                <label for="textarea" class="required">
+                    Write Message
+                </label>
+                <textarea name="textarea" id="textarea" rows="10" minlength="10" maxlength="1000" placeholder="Enter your message in under 1000 characters" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Will you visit us again?</legend>
+                <label for="selections">
+                    Select One
+                </label>
+                <select name="selections" id="optionGroups" size="1">
+                    <optgroup>
+                        <option>There's a chance I will</option>
+                        <option>There's no chance I will</option>
+                        <option>I will undoubtedly do so!!</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Was your experience satisfying?</legend>
                 <label for="yes">Yes</label>
-                <input type="radio" name="visit" id="no" value="no">
+                <input type="radio" name="planting"  id="yes" value="yes">
                 <label for="no">No</label>
-                <input type="radio" name="visit" id="maybe" value="maybe">
+                <input type="radio" name="planting" id="no" value="no">
                 <label for="maybe">Maybe</label>
-                <button>Submit</button>
-            </form>
-        </article>
+                <input type="radio" name="planting" id="maybe" value="maybe">
+            </fieldset>
+            <fieldset>
+                <legend>Would you like to be added to our email list?</legend>
+                <label for="box1">Yes</label>
+                <input type="checkbox" name="box1" id="box1" value="Yes">
+                <label for="box2">No</label>
+                <input type="checkbox" name="box2" id="box2" value="No">
+            </fieldset>
+            <fieldset>
+                <!-- <legend>Submit</legend> -->
+                <!-- <label for="submit">Submit</label> -->
+                <input type="submit" name="submit" id="submit" style="background-color:#465902;">
+            </fieldset>
+
+        </form>
     </section>
+    <footer>
+        <p>
+            &#169 Skyballengine 2023
+        </p>
+    </footer>
 </body>
-<footer>
-    <p>
-        &#169 Skyballengine 2023
-    </p>
-</footer>
 </html>
