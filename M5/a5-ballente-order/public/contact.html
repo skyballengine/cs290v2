@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Eusebius Ballentine</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        fieldset {
+            padding-top: -10%;
+            width:50%;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>
+            Eusebius Ballentine
+        </h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="order.html">Order</a>
+    </nav>
+    <section>
+        <h2>
+            Contact
+        </h2>
+        <p style="padding:2% 1%; padding-bottom: 4%;margin:0%;font-size: 125%; border-top: 2px solid var(--header-color)">
+            Let us know if you have any feedback or suggestions
+        </p>
+        <form action="#" method="POST">
+            <fieldset>
+                <legend>Name</legend>
+                <label for="name" class="required">
+                    Type Name
+                </label>
+                <input type="text" name="name" id="name" autofocus placeholder="Plain text" required>
+            </fieldset>
+            <fieldset>
+                <legend>Email</legend>
+                <label for="email" class="required">
+                    Type Email
+                </label>
+                <input type="email" name="email" id="email" placeholder="name@yourdomain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </fieldset>
+            <fieldset style="width:50%;">
+                <legend>Message</legend>
+                <label for="message" class="required">
+                    Write Message
+                </label>
+                <textarea name="message" id="textarea" rows="10" minlength="10" maxlength="1000" placeholder="Enter your message in under 1000 characters" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Will you visit us again?</legend>
+                <label for="selections">
+                    Select One
+                </label>
+                <select name="selections" id="optionGroups" size="1">
+                    <optgroup>
+                        <option>There's a chance I will</option>
+                        <option>There's no chance I will</option>
+                        <option>I will undoubtedly do so!!</option>
+                    </optgroup>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Was your experience satisfying?</legend>
+                <label for="yes">Yes</label>
+                <input type="radio" name="planting"  id="yes" value="yes">
+                <label for="no">No</label>
+                <input type="radio" name="planting" id="no" value="no">
+                <label for="maybe">Maybe</label>
+                <input type="radio" name="planting" id="maybe" value="maybe">
+            </fieldset>
+            <fieldset>
+                <legend>Would you like to be added to our email list?</legend>
+                <label for="box1">Yes</label>
+                <input type="checkbox" name="box1" id="box1" value="Yes">
+                <label for="box2">No</label>
+                <input type="checkbox" name="box2" id="box2" value="No">
+            </fieldset>
+            <fieldset>
+                <!-- <legend>Submit</legend> -->
+                <!-- <label for="submit">Submit</label> -->
+                <input type="submit" name="submit" id="submit" style="background-color:#465902;">
+            </fieldset>
+
+        </form>
+    </section>
+    <footer>
+        <p>
+            &#169 Skyballengine 2023
+        </p>
+    </footer>
+</body>
+</html>
