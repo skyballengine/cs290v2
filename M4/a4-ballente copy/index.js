@@ -2,7 +2,7 @@
 
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(express.urlencoded({
     extended: true
@@ -37,7 +37,6 @@ let htmlTop = `
             <a href="index.html">Home</a>
             <a href="contact.html">Contact</a>
             <a href="gallery.html">Gallery</a>
-            <a href="order.html">Order</a>
         </nav>
         <main style="padding: 4%;">
             `;
@@ -60,7 +59,7 @@ app.post("/contact.html", (req, res) => {
     const formSelection = req.body.selections;
     const formSatisfaction = req.body.planting;
     const formEmailAdd = req.body.checkbox;
-    // console.log(typeof(req.body.checkbox));
+    console.log(typeof(req.body.checkbox));
     // if (req.body.checkbox == "on") {
     //     let formEmailAdd = "Yes";
     // } else {
@@ -117,41 +116,6 @@ app.post("/contact.html", (req, res) => {
     // }
 
     // main().catch(console.error);
-})
-
-const orderProducts = require('./products.js').products;
-// console.log(orderProducts);
-
-function getProduct(product) {
-    for (const company of orderProducts) {
-        if (product === company.product) {
-            return company;
-        } 
-    }
-}
-// console.log(getProduct('Spinning Cat Scratcher Ball'));
-
-app.post("/order.html", (req, res) => {
-    const formPerson = req.body.name;
-    const formAddress = req.body.address;
-    const formItem = req.body.item;
-    const formQuantity = req.body.quantity;
-    const formDeliveryInstructions = req.body.delivery;
-    const formTotalPrice = getProduct(formItem).price * formQuantity;
-    // console.log(formTotalPrice);
-
-    res.send(htmlTop + `
-        <h3>Hello, ${formPerson}!</h3>
-        <p>Your address is: ${formAddress}</p>
-        <p>The item you have ordered is: ${formItem}</p>
-        <p>Quantity: ${formQuantity}</p>
-        <p>Total price: ${formTotalPrice.toLocaleString('en-US', {     
-            style: 'currency',     
-            currency: 'USD',     
-            currencyDisplay: 'symbol'
-            })}</p>
-        <p>Your delivery instructions are: ${formDeliveryInstructions}</p>
-    ` + htmlBottom)
 })
 
 

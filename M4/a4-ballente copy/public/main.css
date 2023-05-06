@@ -118,7 +118,7 @@ nav {
 }
 nav a {
   background-color: rgb(213, 160, 61);
-  border: 1px solid rgb(213, 160, 61);
+  border: 2px solid rgb(213, 160, 61);
   border-radius: 5px 5px 5px 5px;
   color: white;
   font-size: 1.6em;
@@ -131,8 +131,7 @@ nav a {
 }
 nav a:hover {
   background-color: white;
-  color: var(--color2);
-  border: 1px solid rgb(213, 160, 61);
+  color: black;
 }
 nav a:visited {
   color: var(--color5);
@@ -228,25 +227,19 @@ ins {
 
 /*  ----- Table ----- */
 table {
-  width:105%;
-  line-height: 2;;
   border-collapse: collapse;
+  max-width: 50%;
   text-align: center;
   margin: 0 auto;
-  border: 2px solid rgb(213, 160, 61);
 }
 caption {
-  background-color:var(--color2);
-  border:;
-  color:var(--header-color);
+  background-color: chocolate;
+  border: 1px solid gray;
+  color: lavender;
   font-weight: bold;
-  font-size: larger;
-  line-height: 3;
   padding: 1% 0;
 }
 thead {
-  line-height: 3;
-  font-size: xx-large;
 }
 tbody {
   text-align: center;
@@ -254,18 +247,18 @@ tbody {
 tfoot {
 }
 tr {
-  border: ;
+  border: 1px solid lavender;
 }
 tr:nth-child(even) {
 }
-th {
-  background-color: var(--header-color);
+tr th {
+  border: 1px solid lavender;
 }
 tr td {
-  border:;
-  background-color:;
+  border: 1px solid lavender;
+  background-color: lightgray;
   padding: 1%;
-  text-align: left;
+  text-align: right;
 }
 td:nth-child(1) {
 }
@@ -337,7 +330,6 @@ input {
   padding-left: 2%;
   background-color: #caebf7;
   border:1px;
-  width:100%;
 }
 input:invalid {
   border:2px solid rgb(184, 3, 3);
@@ -381,7 +373,7 @@ textarea {
   background-color: #caebf7;
   padding:1%;
   font-family:inherit;
-  width:100%;
+  width: 100%;
 }
 textarea:valid {
   border:2px solid rgb(25, 117, 25);
@@ -433,12 +425,6 @@ object {
   display: flex;
   flex-flow: row wrap;
   color: var(--color2);
-}
-.local-navigation{
-  color: white;
-  font-size: 1em;
-  text-decoration: none;
-  margin: 1%;
 }
 
 .floatright {

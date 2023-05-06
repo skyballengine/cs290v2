@@ -54,15 +54,13 @@
                         <label for="address" class="required">
                             Enter Address
                         </label>
-                        <input type="text" name="address" id="address" placeholder="address, city, state, zip" pattern="[a-zA-Z][a-zA-Z\s\x27,.-]+" required>
+                        <input type="text" name="address" id="address" placeholder="address, city, state, zip" required>
+                        <!-- pattern="[a-zA-Z][a-zA-Z\s\x27,.-]+" -->
                     </fieldset>
                     <fieldset>
                         <legend>Products For Sale</legend>
                         <table style="float:left;">
-                            <caption>Order Products</caption>
-                            <!-- <thead>
-                                Products
-                            </thead> -->
+                            <caption>Order Products (Choose one)</caption>
                             <tbody>
                                 <tr>
                                     <th>Company</th>
@@ -74,38 +72,38 @@
                                     <th>AGYM</th>
                                     <td>Spinning Cat Scratcher Ball</td>
                                     <td>52.99</td>
-                                    <td><input type="radio"></td>
+                                    <td><input type="radio" name="item" value="Spinning Cat Scratcher Ball"></td>
                                 </tr>
                                 <tr>
                                     <th>Jasonwell</th>
                                     <td>Foldable Dog Pool</td>
                                     <td>27.25</td>
-                                    <td><input type="radio"></td>
+                                    <td><input type="radio" name="item" value="Foldable Dog Pool"></td>
                                 </tr>
                                 <tr>
                                     <th>Expawlorer</th>
                                     <td>Dog Fence Window</td>
                                     <td>30.50</td>
-                                    <td><input type="radio"></td>
+                                    <td><input type="radio" name="item" value="Dog Fence Window"></td>
                                 </tr>
                                 <tr>
                                     <th>Lollimeow</th>
                                     <td>Capsule Pet Travel Backpack</td>
                                     <td>59.00</td>
-                                    <td><input type="radio"></td>
+                                    <td><input type="radio" name="item" value="Capsule Pet Travel Backpack"></td>
                                 </tr>
                                 <tr>
                                     <th>Drool\'d</th>
                                     <td>Cat Hamster Wheel</td>
                                     <td>349.75</td>
-                                    <td><input type="radio"></td>
+                                    <td><input type="radio" name="item" value="Cat Hamster Wheel"></td>
                                 </tr>
                             </tbody>
                         </table>
-                        <input style="width:50%;" type="number" placeholder="Choose one product">
+                        <input style="width:48%;" type="number" name="quantity" placeholder="Select product quantity">
                         <textarea name="delivery" id="delivery" rows="5" maxlength="100" placeholder="Enter your delivery instructions in under 100 characters"></textarea>
                     </fieldset>
-                    <input type="submit" name="submit" id="submit" style="background-color:#465902;">
+                    <input style="width:10%; background-color:#465902; padding:1%;" type="submit" name="submit" id="submit" style="background-color:#465902;">
                 </form>
             </article>
         </section>
