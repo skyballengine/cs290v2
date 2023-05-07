@@ -1,15 +1,19 @@
 'use strict';
 
+// import express module, create express object app, and create PORT constant for listening
 const express = require('express');
 const app = express();
 const PORT = 3000;
 
+//  supports url encoding
 app.use(express.urlencoded({
     extended: true
 }));
 
+// includes 'public' folder as static folder
 app.use(express.static('public'));
 
+// app listens to PORT for requests
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`);
 });
@@ -53,19 +57,14 @@ let htmlBottom = `
 </html>
 `;
 
-// app function using POST method and endpoint value that matches HTML form's action value
+// app route for sending contact form
 app.post("/contact.html", (req, res) => {
     const formPerson = req.body.name;
     const formMessage = req.body.textarea;
     const formSelection = req.body.selections;
     const formSatisfaction = req.body.planting;
     const formEmailAdd = req.body.checkbox;
-    // console.log(typeof(req.body.checkbox));
-    // if (req.body.checkbox == "on") {
-    //     let formEmailAdd = "Yes";
-    // } else {
-    //     let formEmailAdd = "No";
-    // }
+  
     res.send(htmlTop + `
         <h3>Hello, ${formPerson}!</h3>
         <p>Your message is the following: ${formMessage}</p>
@@ -119,9 +118,10 @@ app.post("/contact.html", (req, res) => {
     // main().catch(console.error);
 })
 
+// variable for storing list of products
 const orderProducts = require('./products.js').products;
-// console.log(orderProducts);
 
+// utility function for getting a product from orderProducts
 function getProduct(product) {
     for (const company of orderProducts) {
         if (product === company.product) {
@@ -129,8 +129,8 @@ function getProduct(product) {
         } 
     }
 }
-// console.log(getProduct('Spinning Cat Scratcher Ball'));
 
+// route for placing an order
 app.post("/order.html", (req, res) => {
     const formPerson = req.body.name;
     const formAddress = req.body.address;
@@ -138,7 +138,6 @@ app.post("/order.html", (req, res) => {
     const formQuantity = req.body.quantity;
     const formDeliveryInstructions = req.body.delivery;
     const formTotalPrice = getProduct(formItem).price * formQuantity;
-    // console.log(formTotalPrice);
 
     res.send(htmlTop + `
         <h3>Hello, ${formPerson}!</h3>
