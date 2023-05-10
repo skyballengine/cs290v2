@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Use timers</title>
+    <script>
+        function turnBackgroundRed() {
+            document.getElementById("turnRed").style.backgroundColor = 'red';
+        };
+
+        function toggleColor() {
+            let currentColor = document.getElementById("toggleColor").style.backgroundColor;
+            document.getElementById("toggleColor").style.backgroundColor = (currentColor === 'green') ?
+                'violet' : 'green';
+        }
+
+        function turnToggleOff(intervalID) {
+            clearInterval(intervalID);
+        }
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            console.log("DOM fully loaded and parsed");
+
+            // Call turnBackgroundRed after 10 seconds, i.e., 10000 milliseconds.
+            setTimeout(turnBackgroundRed, 10000);
+
+            // Call toggleColor every 3 seconds, i.e., 3000 milliseconds.
+            let intervalID = setInterval(toggleColor, 3000);
+            setTimeout(turnToggleOff, 20000, intervalID);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="turnRed">The background color will turn red after 10 seconds.</div>
+    <div id="toggleColor" style="background-color: green;">The background color will toggle every 3 seconds.</div>
+</body>
+
+</html>

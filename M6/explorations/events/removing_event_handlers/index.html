@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Removing an event listener</title>
+    <script>
+        function changeColor() {
+            let toUpdate = document.getElementById('changeMe');
+            toUpdate.style.backgroundColor = toUpdate.style.backgroundColor === 'red'
+                ? 'green' : 'red';
+        }
+
+        function unbindButton() {
+            document.getElementById('backgroundChanger').removeEventListener('click', changeColor);
+        }
+
+        window.onload = function () {
+            document.getElementById('backgroundChanger').addEventListener('click', changeColor);
+            document.getElementById('noMoreFun').addEventListener('click', unbindButton);
+        };
+
+
+    </script>
+</head>
+
+<body>
+    <button id="backgroundChanger">Clicking on me will change the background</button><br>
+    <span id="changeMe">My background will change if the button above me is clicked.</span><br>
+    <button id="noMoreFun">Clicking on me will remove the handler on the button at the top. No more background color
+        changes!</button>
+</body>
+
+</html>

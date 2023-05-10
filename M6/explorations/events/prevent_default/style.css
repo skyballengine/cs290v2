@@ -1,0 +1,33 @@
+#buttonHolderDiv{
+    width: 150px;
+    height: 75px;
+    background-color: violet;
+}
+
+#nestedButton{
+    position:relative;
+    height:25px;
+    top:25px;
+    margin-left:15%;
+    width:70%;
+}
+
+#buttonClickOutput{
+    min-width:20px;
+    min-height:20px;
+    background-color:violet;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#defaultOrNotCheckboxLabel{
+    background-color:lightblue;
+}
+
+#defaultOrNotClickOutput{
+    min-width:20px;
+    min-height:20px;
+    background-color:lightblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Event Handlers</title>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div>
+        <div id="buttonHolderDiv">
+            <button id="nestedButton">Nested Button</button>
+        </div>
+        <div id="buttonClickOutput"></div>
+        <form>
+            <fieldset>
+                <legend>Example of stopPropagation()</legend>
+                <input type="checkbox" id="stopPropagationCheckbox" />
+                <label>
+                    stopPropagationCheckbox - check to stop propagation of click event on Nested Button
+                    to its parent element Button Div Holder.
+                </label>
+            </fieldset>
+        </form>
+    </div>
+    <br />
+    <div>
+        <input type="checkbox" id="defaultOrNotCheckbox" />
+        <label id="defaultOrNotCheckboxLabel">
+            defaultOrNotCheckbox - The state of this checkbox can only change if the preventDefaultCheckbox is
+            unchecked.
+        </label>
+        <div id="defaultOrNotClickOutput"></div>
+        <form>
+            <fieldset>
+                <legend>Example of preventDefault()</legend>
+                <input type="checkbox" id="preventDefaultCheckbox" />
+                <label>
+                    preventDefaultCheckbox - check to prevent invocation of the default event handler for
+                    defaultOrNotCheckbox.
+                </label>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

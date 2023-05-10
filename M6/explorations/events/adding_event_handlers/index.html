@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Registering event listeners</title>
+    <script>
+        // The browser can pass the event to the event handler
+        function mouseClick(event) {
+            console.log('Mouse clicked on the following element');
+            // The property event.target is set to the element which dispatched
+            // the event. We will discuss this and other properties of 
+            // event in the next section.
+            console.log(event.target);
+            // If the color is currently red, set it to green.
+            // Otherwise set it to red.
+            event.target.style.color = event.target.style.color === 'red' ?
+                            'green' : 'red';
+        };
+
+        window.onload = function () {
+            document.getElementById('registerWithDOM').addEventListener("click", mouseClick);
+        };
+    </script>
+</head>
+
+<body>
+    <div id="registerAsAttribute" onclick="mouseClick(event)">Div with event handler added in HTML.</div>
+    <div id="registerWithDOM">Div with event handler added in JavaScript.</div>
+</body>
+
+</html>
