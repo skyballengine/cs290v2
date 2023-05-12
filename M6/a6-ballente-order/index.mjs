@@ -1,9 +1,15 @@
 'use strict';
 
 // import express module, create express object app, and create PORT constant for listening
-const express = require('express');
+import 'dotenv/config';
+import express from 'express';
+import asyncHandler from 'express-async-handler';
+import fetch from 'node-fetch';
+import { products as orderProducts } from './products.js'
+
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 //  supports url encoding
 app.use(express.urlencoded({
@@ -119,7 +125,7 @@ app.post("/contact.html", (req, res) => {
 })
 
 // variable for storing list of products
-const orderProducts = require('./products.js').products;
+// const orderProducts = require('./products.js').products;
 
 // utility function for getting a product from orderProducts
 function getProduct(product) {
@@ -152,6 +158,17 @@ app.post("/order.html", (req, res) => {
         <p>Your delivery instructions are: ${formDeliveryInstructions}</p>
     ` + htmlBottom)
 })
+
+app.post("/staff", asyncHandler(async(req, res) => {
+    try {
+        const response = await fetch('https://randomuser.me/api/');
+        const data = await response.json();
+        res.send(data)
+    } catch (error) {
+        console.log(error);
+        res.send('500 - Server Error')
+    }
+}))
 
 
 
