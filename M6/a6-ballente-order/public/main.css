@@ -30,7 +30,7 @@
   --color3: #1e2601;
   --color4: #c1d911cc;
   --color5: #e6f288;
-  --header-color:rgb(213, 160, 61);
+  --header-color: rgb(213, 160, 61);
   --custom-size: 200%;
   --custom-embellishment-name: ;
 }
@@ -84,7 +84,7 @@ aside {
 footer {
   border: 2px solid var(--color5);
   background-color: var(--color5);
-  color:rgb(213, 160, 61);
+  color: rgb(213, 160, 61);
   /*margin: 6%;
   padding: 1.5%;*/
   padding: 10px;
@@ -96,8 +96,8 @@ a {
 }
 a:link {
   color: rgb(0, 128, 96);
-  text-decoration: none;
-  border: 1px solid orange;
+  text-decoration: underline;
+  /* border: 1px solid orange; */
 }
 a:hover {
   color: aquamarine;
@@ -113,7 +113,7 @@ a:visited {
 /*  ----- Navigation ----- Override text links for navigation only.  */
 nav {
   text-align: center;
-  padding-bottom:75px;
+  padding-bottom: 75px;
   text-decoration: none;
 }
 nav a {
@@ -138,7 +138,6 @@ nav a:visited {
   color: var(--color5);
   border: 2px solid rgb(213, 160, 61);
 }
-
 
 /*  -----  Typography  ----- */
 p {
@@ -228,17 +227,17 @@ ins {
 
 /*  ----- Table ----- */
 table {
-  width:105%;
-  line-height: 2;;
+  width: 105%;
+  line-height: 2;
   border-collapse: collapse;
   text-align: center;
   margin: 0 auto;
   border: 2px solid rgb(213, 160, 61);
 }
 caption {
-  background-color:var(--color2);
-  border:;
-  color:var(--header-color);
+  background-color: var(--color2);
+  border: ;
+  color: var(--header-color);
   font-weight: bold;
   font-size: larger;
   line-height: 3;
@@ -246,7 +245,7 @@ caption {
 }
 thead {
   line-height: 3;
-  font-size: xx-large;
+  font-size: x-large;
 }
 tbody {
   text-align: center;
@@ -257,15 +256,16 @@ tr {
   border: ;
 }
 tr:nth-child(even) {
+  background-color: #f5f5f595;
 }
 th {
   background-color: var(--header-color);
 }
 tr td {
-  border:;
-  background-color:;
+  border: ;
+  background-color: ;
   padding: 1%;
-  text-align: left;
+  text-align: center;
 }
 td:nth-child(1) {
 }
@@ -277,9 +277,13 @@ datalist {
 }
 
 /*  ----- Form ----- */
-form, button, input, select, textarea {
+form,
+button,
+input,
+select,
+textarea {
   font-family: "Anuphan", sans-serif;
-  color:rgb(213, 160, 61);
+  color: rgb(213, 160, 61);
 }
 form {
   border: 2px solid var(--color5);
@@ -294,13 +298,13 @@ fieldset {
 }
 :focus {
   background-color: honeydew;
-  border:2px solid rgb(213, 160, 61);
+  border: 2px solid rgb(213, 160, 61);
 }
 *:required {
-  border:2px solid rgb(184, 3, 3);
+  border: 2px solid rgb(184, 3, 3);
 }
 legend {
-  background-color:rgb(213, 160, 61);
+  background-color: rgb(213, 160, 61);
   border: 2px solid rgb(213, 160, 61);
   color: var(--color5);
   margin: 2% -5%;
@@ -309,50 +313,55 @@ legend {
   font-style: bold;
 }
 label {
-  color:#465902;
+  color: #465902;
   display: block;
   margin-top: 4%;
   font-size: 100%;
   padding-bottom: 2%;
-  border:1px;
+  border: 1px;
 }
 
 label.required:after {
-  content:" *";
-  color:green;
+  content: " *";
+  color: green;
 }
 button {
-  font-size:110%;
+  font-size: 110%;
   background-color: var(--color2);
-  padding:2% 4%;
-  font-family:inherit;
+  padding: 2% 4%;
+  font-family: inherit;
   margin: 1px;
-  border:1px;
+  border: 1px;
 }
 
 input {
-  padding:2%;
+  padding: 2%;
   font-size: 120%;
-  font-family:inherit;
+  font-family: inherit;
   padding-left: 2%;
   background-color: #caebf7;
-  border:1px;
-  width:100%;
+  border: 1px;
+  width: 100%;
 }
 input:invalid {
-  border:2px solid rgb(184, 3, 3);
+  border: 2px solid rgb(184, 3, 3);
 }
 input:valid {
-  border:2px solid rgb(25, 117, 25);
+  border: 2px solid rgb(25, 117, 25);
 }
 input::placeholder {
-  color:rgb(120, 118, 118);
+  color: rgb(120, 118, 118);
 }
 input:disabled {
-  background: repeating-linear-gradient(142deg, #CCCCCC, #CCCCCC 4px, #999999 22px);
+  background: repeating-linear-gradient(
+    142deg,
+    #cccccc,
+    #cccccc 4px,
+    #999999 22px
+  );
 }
 input:enabled {
-  background:;
+  background: ;
 }
 output {
 }
@@ -361,55 +370,54 @@ meter {
 progress {
 }
 select {
-  font-size:110%;
+  font-size: 110%;
   background-color: #caebf7;
-  padding:1%;
-  font-family:inherit;
-  color:rgb(120, 118, 118); 
+  padding: 1%;
+  font-family: inherit;
+  color: rgb(120, 118, 118);
 }
 optgroup {
 }
 option {
-  font-size:110%;
+  font-size: 110%;
   background-color: #caebf7;
-  padding:1%;
-  font-family:inherit;
+  padding: 1%;
+  font-family: inherit;
 }
 textarea {
-  font-size:110%;
+  font-size: 110%;
   color: var(--color2);
   background-color: #caebf7;
-  padding:1%;
-  font-family:inherit;
-  width:100%;
+  padding: 1%;
+  font-family: inherit;
+  width: 100%;
 }
 textarea:valid {
-  border:2px solid rgb(25, 117, 25);
+  border: 2px solid rgb(25, 117, 25);
 }
 
 /* ----- Media ----- */
 figure {
   color: var(--color2);
-  margin:1%; 
-  padding:0;
-  width:30%;    /* Adjust the percentage based on the combined width of borders and and padding. */
-  float:;
-  border:1px solid gray 50%;
+  margin: 1%;
+  padding: 0;
+  width: 30%; /* Adjust the percentage based on the combined width of borders and and padding. */
+  float: ;
+  border: 1px solid gray 50%;
 }
 figcaption {
   color: var(--color2);
-  font-size:80%;
-  text-align:left;
-  display:block;
-  padding:1%;
-  width:100%;
-
+  font-size: 80%;
+  text-align: left;
+  display: block;
+  padding: 1%;
+  width: 100%;
 }
 figure img {
   color: var(--color2);
-  width:80%; 
-  margin:0; 
-  padding:0;
+  width: 80%;
+  margin: 0;
+  padding: 0;
 }
 svg {
 }
@@ -434,11 +442,15 @@ object {
   flex-flow: row wrap;
   color: var(--color2);
 }
-.local-navigation{
+.local-navigation {
   color: white;
   font-size: 1em;
   text-decoration: none;
   margin: 1%;
+}
+.order-table-top {
+  font-weight: bold;
+  font-size: large;
 }
 
 .floatright {

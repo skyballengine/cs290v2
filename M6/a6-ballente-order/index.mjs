@@ -7,9 +7,9 @@ import asyncHandler from 'express-async-handler';
 import fetch from 'node-fetch';
 import { products as orderProducts } from './products.js'
 
+const PORT = process.env.PORT;
 
 const app = express();
-const PORT = process.env.PORT;
 
 //  supports url encoding
 app.use(express.urlencoded({
@@ -78,54 +78,7 @@ app.post("/contact.html", (req, res) => {
         <p>Your experience was satisfying: ${formSatisfaction}</p>
         <p>Will you be added to our email list?: ${formEmailAdd}</p>
     ` + htmlBottom)
-
-    // const nodemailer = require("nodemailer");
-
-    // // async..await is not allowed in global scope, must use a wrapper
-    // async function main() {
-    // // Generate test SMTP service account from ethereal.email
-    // // Only needed if you don't have a real mail account for testing
-    // let testAccount = await nodemailer.createTestAccount();
-
-    // // create reusable transporter object using the default SMTP transport
-    // let transporter = nodemailer.createTransport({
-    //     host: "smtp.ethereal.email",
-    //     port: 587,
-    //     secure: false, // true for 465, false for other ports
-    //     auth: {
-    //     user: testAccount.user, // generated ethereal user
-    //     pass: testAccount.pass, // generated ethereal password
-    //     },
-    // });
-
-    // // send mail with defined transport object
-    // let info = await transporter.sendMail({
-    //     from: '"Sky Ballentine" <skyballentine@gmail.com>', // sender address
-    //     to: "skyballentine@gmail.com", // list of receivers
-    //     subject: "Hello ✔", // Subject line
-    //     text: "Hello world?", // plain text body
-    //     html: htmlTop + `
-    //     <h3>Hello, ${formPerson}!</h3>
-    //     <p>Your message is the following: ${formMessage}</p>
-    //     <p>Will you be visiting us again?: ${formSelection}</p>
-    //     <p>Your experience was satisfying: ${formSatisfaction}</p>
-    //     <p>Will you be added to our email list?: ${formEmailAdd}</p>
-    // ` + htmlBottom
-    // });
-
-    // console.log("Message sent: %s", info.messageId);
-    // // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-    // // Preview only available when sending through an Ethereal account
-    // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-    // // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
-    // }
-
-    // main().catch(console.error);
 })
-
-// variable for storing list of products
-// const orderProducts = require('./products.js').products;
 
 // utility function for getting a product from orderProducts
 function getProduct(product) {
@@ -159,17 +112,33 @@ app.post("/order.html", (req, res) => {
     ` + htmlBottom)
 })
 
-app.post("/staff", asyncHandler(async(req, res) => {
-    try {
-        const response = await fetch('https://randomuser.me/api/');
-        const data = await response.json();
-        res.send(data)
-    } catch (error) {
-        console.log(error);
-        res.send('500 - Server Error')
-    }
+let countToTen = 1;
+let countEveryTen = 0;
+// route for browser calls to random person api
+app.get("/random-person", asyncHandler(async(req, res) => {
+    const response = await fetch('https://randomuser.me/api/');
+    const data = await response.json();
+    res.send(data);
+    next();
+    
 }))
 
+app.use("/random-person", (req, res, next) => {
+    if (countToTen % 10 == 0) {
+        countEveryTen += 1;
+        console.log(`#${countEveryTen} tenth call`);
+    } else {
+        console.log(`Call #${countToTen}`);
+        countToTen += 1;
+    }
+    next();
+})
+
+// error handling for above route
+app.use((err, req, res, next) => {
+    console.log(err.stack)
+    res.status(500).send(`<h2>Wait</h2><p>Something is amiss, please try again</p>`)
+})
 
 
 

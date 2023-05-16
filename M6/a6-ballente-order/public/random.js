@@ -1,44 +1,53 @@
 'use strict';
+// debugger;
 
-async function showPersonData(url) {
-    try {
-        const response = await fetch(url);
-        const data = await response.text();
-        populateRows(data);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-function populateRows() {
-    const tableElement = document.getElementById('tbody');
-    for (let i = 0; i < 4; i++) {
+function populateRow(data) {
+    const tableBodyElement = document.getElementById('random-person-data');
         let newRow = document.createElement('tr');
-        tableElement.appendChild(newRow);
-        let cell1 = document.createElement('td');
-        newRow.appendChild(cell1);
-        cell1.innerText = "hello";
-        let cell2 = document.createElement('td');
-        newRow.appendChild(cell2);
-        cell2.innerText = "hello";
-        let cell3 = document.createElement('td');
-        newRow.appendChild(cell3);
-        cell3.innerText = "hello";
-        let cell4 = document.createElement('td');
-        newRow.appendChild(cell4);
-        cell4.innerText = "hello";
+        tableBodyElement.appendChild(newRow);
+        let data1 = document.createElement('td');
+        newRow.appendChild(data1);
+        data1.innerHTML += `<img src="${data.picture.thumbnail}">`
+        let data2 = document.createElement('td');
+        newRow.appendChild(data2);
+        data2.innerHTML += `<a href="mailto:${data.email}">
+                            ${data.name.first} 
+                            ${data.name.last}</a>
+                            `;
+        let data3 = document.createElement('td');
+        newRow.appendChild(data3);
+        data3.innerHTML += `${data.phone}`;
+        let data4 = document.createElement('td');
+        newRow.appendChild(data4);
+        data4.innerHTML += `${data.location.city}`;
         
     }
-}
-function callServer(event) {
+
+
+async function callRandomUserServer(event) {
     event.preventDefault();
-    console.log('Sending request to server for person data')
-    showPersonData()
+    console.log('Sending request to server for person data');
+    const targetId = event.target.getAttribute('id');
+    const url = targetId === 'browser' ? "https://randomuser.me/api/" 
+                : "/random-person";
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (response.status == 200) {
+            populateRow(data.results[0]);
+            console.log(data)
+        }
+    } catch (err) {
+        console.error(err);
+
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     const browserButton = document.getElementById('browser');
-    browserButton.addEventListener('submit', populateRows);
-    // const expressButton = document.getElementById('express');
-    // button2.addEventListener('submit', showPersonData);
+    browserButton.addEventListener('click', callRandomUserServer);
+    const expressButton = document.getElementById('express');
+    expressButton.addEventListener('click', callRandomUserServer);
 })
