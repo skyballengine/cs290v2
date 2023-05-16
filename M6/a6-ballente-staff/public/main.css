@@ -260,6 +260,8 @@ tr:nth-child(even) {
 }
 th {
   background-color: var(--header-color);
+  font-size: large;
+  font-weight: bolder;
 }
 tr td {
   border: ;

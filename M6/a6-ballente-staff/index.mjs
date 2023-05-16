@@ -114,25 +114,25 @@ app.post("/order.html", (req, res) => {
 
 let countToTen = 1;
 let countEveryTen = 0;
-// route for browser calls to random person api
-app.get("/random-person", asyncHandler(async(req, res) => {
-    const response = await fetch('https://randomuser.me/api/');
-    const data = await response.json();
-    res.send(data);
-    next();
-    
-}))
-
 app.use("/random-person", (req, res, next) => {
     if (countToTen % 10 == 0) {
         countEveryTen += 1;
-        console.log(`#${countEveryTen} tenth call`);
+        console.log(`You are receiving the tenth call #${countEveryTen}`);
+        countToTen += 1;
     } else {
         console.log(`Call #${countToTen}`);
         countToTen += 1;
     }
     next();
+
 })
+// route for browser calls to random person api
+app.get("/random-person", asyncHandler(async(req, res) => {
+    const response = await fetch('https://randomuser.me/api/');
+    const data = await response.json();
+    res.send(data);
+    
+}))
 
 // error handling for above route
 app.use((err, req, res, next) => {
