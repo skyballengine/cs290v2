@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Eusebius Ballentine</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name="robots" content="noindex">
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+        <style>
+            fieldset {
+                padding-top: -10%;
+                width:50%;
+            }
+            textarea {
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Eusebius Ballentine
+            </h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="order.html">Order</a>
+            <a href="staff.html">Staff</a>
+        </nav>
+        <section>
+            <h2>Order</h2>
+            <article>
+                <p style="padding:1%; padding-bottom: 4%;margin:1% 0%;
+                    font-size: 125%;">You can place an order on this page.</p>
+                <form action="#", method="POST">
+                    <fieldset>
+                        <legend>Name</legend>
+                        <label for="name" class="required">
+                            Enter Name
+                        </label>
+                        <input type="text" name="name" id="name" autofocus
+                            placeholder="Plain text" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Email</legend>
+                        <label for="email" class="required">
+                            Enter Email
+                        </label>
+                        <input type="email" name="email" id="email"
+                            placeholder="name@yourdomain.com"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Address</legend>
+                        <label for="address" class="required">
+                            Enter Address
+                        </label>
+                        <input type="text" name="address" id="address"
+                            placeholder="address, city, state, zip" required>
+                        <!-- pattern="[a-zA-Z][a-zA-Z\s\x27,.-]+" -->
+                    </fieldset>
+                    <fieldset>
+                        <legend>Products For Sale</legend>
+                        <table style="float:left;">
+                            <caption style="font-weight:bold;">Order Products
+                                (Choose one)</caption>
+                            <tbody>
+                                <tr class="order-table-top">
+                                    <th>Company</th>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Choice</th>
+                                </tr>
+                                <tr>
+                                    <th>AGYM</th>
+                                    <td>Spinning Cat Scratcher Ball</td>
+                                    <td>52.99</td>
+                                    <td><input type="radio" name="item"
+                                            value="Spinning Cat Scratcher Ball"></td>
+                                </tr>
+                                <tr>
+                                    <th>Jasonwell</th>
+                                    <td>Foldable Dog Pool</td>
+                                    <td>27.25</td>
+                                    <td><input type="radio" name="item"
+                                            value="Foldable Dog Pool"></td>
+                                </tr>
+                                <tr>
+                                    <th>Expawlorer</th>
+                                    <td>Dog Fence Window</td>
+                                    <td>30.50</td>
+                                    <td><input type="radio" name="item"
+                                            value="Dog Fence Window"></td>
+                                </tr>
+                                <tr>
+                                    <th>Lollimeow</th>
+                                    <td>Capsule Pet Travel Backpack</td>
+                                    <td>59.00</td>
+                                    <td><input type="radio" name="item"
+                                            value="Capsule Pet Travel Backpack"></td>
+                                </tr>
+                                <tr>
+                                    <th>Drool\'d</th>
+                                    <td>Cat Hamster Wheel</td>
+                                    <td>349.75</td>
+                                    <td><input type="radio" name="item"
+                                            value="Cat Hamster Wheel"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input style="width:48%;" type="number" name="quantity"
+                            placeholder="Select product quantity">
+                        <textarea name="delivery" id="delivery" rows="5"
+                            maxlength="100" placeholder="Enter your delivery
+                            instructions in under 100 characters"></textarea>
+                    </fieldset>
+                    <input style="width:10%; background-color:#465902;
+                        padding:1%;" type="submit" name="submit" id="submit"
+                        style="background-color:#465902;">
+                </form>
+            </article>
+        </section>
+        <footer>
+            <p>
+                &#169 Skyballengine 2023
+            </p>
+        </footer>
+    </body>
+</html>
