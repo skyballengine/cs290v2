@@ -74,6 +74,7 @@ function GalleryPage() {
             <p>Plantings Gallery</p>
             <article className="react-gallery-article">
                 <ImageGallery items={images} />
+                <p>{images.description} </p>
             </article>
         </section>
         </>

@@ -1,0 +1,45 @@
+/* 
+This style sheet can be used for reference
+but not for an assignment.
+*/
+
+/* Center the body in the middle of the viewport 
+by defining min and max widths with auto right/left margins
+*/
+body {
+margin:0 auto;
+width:500px;
+border:1px solid gray;
+padding:4%;
+}
+
+/* PAGE LAYOUT 
+Consistant design for each page layout block. 
+*/
+header, main, article, footer {
+    border-bottom:2px solid gray;
+}
+
+/* NAVIGATION
+Simple changes to make anchors look like buttons. 
+*/
+nav {}
+nav a {margin-right:3%;}
+nav a:hover {}
+
+/* TABLE */
+table {}
+caption {}
+tr td, td th {border-bottom:1px dotted whitesmoke;}
+tr:nth-child(even){}
+th {}
+
+
+/* FORM */
+fieldset {}
+legend {}
+label {display:block;margin-top:3%;}
+input {}
+button {}
+button:hover {}
+

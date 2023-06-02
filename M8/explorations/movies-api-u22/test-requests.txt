@@ -1,0 +1,70 @@
+// TEST FILE to perform CRUD on Movies database.
+
+
+// CREATE nine documents in a movie collection ***********************
+// by copying the URLs one at a time into the browser address bar and enter/return:
+
+http://localhost:3000/create?title=Doctor Strange in the Multiverse of Madness&year=2022&language=English
+
+http://localhost:3000/create?title=Huda's Salon&year=2022&language=Arabic
+
+http://localhost:3000/create?title=The Lost City&year=2022&language=English
+
+http://localhost:3000/create?title=Eternal Sunshine Of The Spotless Mind&year=2004&language=English
+
+http://localhost:3000/create?title=Anchorman&year=2004&language=English
+
+http://localhost:3000/create?title=No Country For Old Men&year=2007&language=English
+
+http://localhost:3000/create?title=City Of God &year=2003&language=Portuguese
+
+http://localhost:3000/create?title=Parasite&year=2019&language=Korean
+
+http://localhost:3000/create?title=Chang jin hu&year=2021&language=Mandarin
+
+
+
+// RETRIEVE / FIND **************************************************
+// Confirm all ten movies have been created
+// by using the following URL in the browser address bar.
+// Retrieve all the movies in the collection:
+http://localhost:3000/retrieve
+
+// Filter the list by retrieving movies for 2018
+// if you added them to the controller. 
+http://localhost:3000/retrieve?year=2022
+
+// Filter the list by retrieving two or more parameters. 
+http://localhost:3000/retrieve?year=2022&language=Arabic
+
+// Filter by ID for The Lost City movie
+// Copy its ID from the retrieve-all list first 
+// and replace the id in this request.
+http://localhost:3000/retrieve?_id=63f24f094682efae6463a2bd
+
+
+
+// UPDATE ***********************************************************
+// Create the movie below, 
+// then copy its _id and request an update to the year.
+// Notice the count of updates is 1.
+// Retrieve it again by its year to view the change. 
+
+http://localhost:3000/create?title=Burning&year=2019&language=Korean
+
+http://localhost:3000/update?_id=63f2513197347314997798d2&title=Burning&year=2018&language=Korean
+
+http://localhost:3000/retrieve?year=2018
+
+
+
+// DELETE ***********************************************************
+// Note: replace the value of _id in the following URL 
+// with the _id value of the previous request.
+http://localhost:3000/delete?_id=63f2513197347314997798d2
+
+// Notice the count of deletions is 1.
+
+// Request the year again to confirm that the 
+// deleted movie does not exist. 
+http://localhost:3000/retrieve?year=2018

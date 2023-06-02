@@ -1,0 +1,81 @@
+### CREATE five documents.
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Sorry to Bother You",
+    "year": 2019,
+    "language": "English"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Eternal Sunshine Of The Spotless Mind",
+    "year": 2004,
+    "language": "Arabic"
+}
+
+### CREATE 3
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "title": "High Fidelity",
+    "year": 2000,
+    "language": "French"
+}
+
+### CREATE 4
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Anchorman",
+    "year": 2004,
+    "language": "Korean"
+}
+
+### CREATE 5
+POST http://localhost:3000/movies HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Parasite",
+    "year": 2019,
+    "language": "Korean"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/movies HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/movies/6478d7471f60b88f66e93368 HTTP/1.1
+
+
+### UPDATE one document's year, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/movies/6478d7471f60b88f66e93368 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Sorry to Bother You",
+    "year": 2016,
+    "language": "English"
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/movies/6478e296c09dc87af6822820 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/movies/ HTTP/1.1
+
