@@ -12,44 +12,46 @@ const db = mongoose.connection;
 // Confirm that the database has connected 
 // and print a message in the console.
 db.once("open", () => {
-    console.log("Successfully connected to MongoDB using Mongoose!");
+    console.log("Successfully connected to MongoDB users_db using Mongoose!");
 });
 
 
 // Define the collection's schema.
-const movieSchema = mongoose.Schema({
-	title: { type: String, required: true },
-	year: { type: Number, required: true },
-	language: { type: String, required: true }
+const userSchema = mongoose.Schema({
+	name: { type: String, required: true },
+	age: { type: Number, required: true },
+	email: { type: String, required: true },
+    phoneNumber: { type: Number, required: false }
 });
 
 // Compile the model from the schema.
-const Movie = mongoose.model("Movie", movieSchema);
+const User = mongoose.model("User", userSchema);
 
 
 
 // CREATE model *****************************************
-const createMovie = async (title, year, language) => {
-    const movie = new Movie({ 
-        title: title, 
-        year: year, 
-        language: language 
+const createUser = async (name, age, email, phoneNumber) => {
+    const user = new User({ 
+        name: name, 
+        age: age,
+        email: email,
+        phoneNumber: phoneNumber 
     });
-    return movie.save();
+    return user.save();
 }
 
 
 // RETRIEVE models *****************************************
 
 // Retrieve based on a filter and return a promise.
-const findMovies = async (filter) => {
-    const query = Movie.find(filter);
+const findUsers = async (filter) => {
+    const query = User.find(filter);
     return query.exec();
 }
 
 // Retrieve based on the ID and return a promise.
 const findById = async (_id) => {
-    const query = Movie.findById(_id);
+    const query = User.findById(_id);
     return query.exec();
 }
 
@@ -58,25 +60,31 @@ const findById = async (_id) => {
 // DELETE models  *****************************************
 // Delete based on the ID.
 const deleteById = async (_id) => {
-    const result = await Movie.deleteOne({_id: _id});
+    const result = await User.deleteOne({_id: _id});
     return result.deletedCount;
 };
 
 // Delete based on filter.
 const deleteByProperty = async (filter) => {
-    const result = await Movie.deleteMany(filter);
+    const result = await User.deleteMany(filter);
+    return result.deletedCount;
+}
+
+// Delete all
+const deleteAllUsers = async () => {
+    const result = await User.deleteMany();
     return result.deletedCount;
 }
 
 
 
 // UPDATE model *****************************************
-const updateMovie = async (filter, update) => {
-    const result = await Movie.updateOne(filter, update);
+const updateUser = async (filter, update) => {
+    const result = await User.updateOne(filter, update);
     return result.modifiedCount;
 };
 
 
 
 // Export our variables for use in the controller file.
-export { createMovie, findMovies, findById, updateMovie, deleteById, deleteByProperty }
+export { createUser, findUsers, findById, updateUser, deleteById, deleteByProperty, deleteAllUsers }

@@ -4,25 +4,17 @@
 // CREATE nine documents in a movie collection ***********************
 // by copying the URLs one at a time into the browser address bar and enter/return:
 
-http://localhost:3000/create?title=Doctor Strange in the Multiverse of Madness&year=2022&language=English
+http://localhost:3000/create?name=Tom Selleck&age=54&email=tom@example.com&phoneNumber=813344482
 
-http://localhost:3000/create?title=Huda's Salon&year=2022&language=Arabic
+http://localhost:3000/create?name=Cher Gray&age=27&email=cher@example.com&phoneNumber=8114482
 
-http://localhost:3000/create?title=The Lost City&year=2022&language=English
+http://localhost:3000/create?name=Will Thomas&age=37&email=will@example.com&phoneNumber=8113214482
 
-http://localhost:3000/create?title=Eternal Sunshine Of The Spotless Mind&year=2004&language=English
+http://localhost:3000/create?name=Forbin Lindy&age=7&email=forb@example.com&phoneNumber=811344482
 
-http://localhost:3000/create?title=Anchorman&year=2004&language=English
+http://localhost:3000/create?name=Karen Gray&age=21&email=karen@example.com&phoneNumber=8114482
 
-http://localhost:3000/create?title=No Country For Old Men&year=2007&language=English
-
-http://localhost:3000/create?title=City Of God &year=2003&language=Portuguese
-
-http://localhost:3000/create?title=Parasite&year=2019&language=Korean
-
-http://localhost:3000/create?title=Chang jin hu&year=2021&language=Mandarin
-
-
+http://localhost:3000/create?name=Silvio Rubin&age=97&email=silv@example.com&phoneNumber=811456482
 
 // RETRIEVE / FIND **************************************************
 // Confirm all ten movies have been created

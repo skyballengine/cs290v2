@@ -5,7 +5,7 @@
   "main": "movies-controller.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon movies-controller.mjs"
+    "start": "nodemon users-controller.mjs"
   },
   "author": "",
   "license": "ISC",
