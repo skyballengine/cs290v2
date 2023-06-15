@@ -1,0 +1,81 @@
+### CREATE five documents.
+POST http://localhost:3000/log HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Himalayan Institute",
+    "bedLength": 2300,
+    "execDate": "06-01-2021"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/log HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Catskill Montessori School",
+    "bedLength": 1600,
+    "execDate": "05-15-2022"
+}
+
+### CREATE 3
+POST http://localhost:3000/log HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Hickory Hill Farm",
+    "bedLength": 1200,
+    "execDate": "05-15-2020"
+}
+
+### CREATE 4
+POST http://localhost:3000/log HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Highlights Foundation",
+    "bedLength": 1600,
+    "execDate": "10-15-2022"
+}
+
+### CREATE 5
+POST http://localhost:3000/log HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Karme Choling",
+    "bedLength": 1000,
+    "execDate": "06-25-2023"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/log HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/log/6488c3c7cbb48af314b5a8d2 HTTP/1.1
+
+
+### UPDATE one document's date, by ID.
+### Replace the id in the following request with one that exists
+### and update the title, year, and/or language:
+PUT http://localhost:3000/log/6488c3c7cbb48af314b5a8d2 HTTP/1.1
+content-type: application/json
+
+{
+    "locationName": "Karme Choling",
+    "bedLength": 1000,
+    "execDate": "06-26-2023"
+}
+
+### DELETE by ID (no response provided)
+DELETE http://localhost:3000/log/6488c3c7cbb48af314b5a8d2 HTTP/1.1
+
+
+### DELETEs ALL documents!
+DELETE http://localhost:3000/log HTTP/1.1
+

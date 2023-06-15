@@ -1,5 +1,5 @@
 {
-  "name": "movies-starter-frontend",
+  "name": "plantings-starter-frontend",
   "version": "2023",
   "private": true,
   "proxy": "http://localhost:3000",

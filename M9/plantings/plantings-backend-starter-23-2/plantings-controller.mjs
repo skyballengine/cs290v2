@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-import * as movies from './movies-model.mjs';
+import * as plantings from './plantings-model.mjs';
 
 const PORT = process.env.PORT;
 const app = express();
@@ -8,14 +8,14 @@ app.use(express.json());  // REST needs JSON MIME type.
 
 
 // CREATE controller ******************************************
-app.post ('/movies', (req,res) => { 
-    movies.createMovie(
-        req.body.title, 
-        req.body.year, 
-        req.body.language
+app.post ('/plantings', (req,res) => { 
+    plantings.createPlanting(
+        req.body.location_name, 
+        req.body.bed_length, 
+        req.body.exec_date
         )
-        .then(movie => {
-            res.status(201).json(movie);
+        .then(plantings => {
+            res.status(201).json(plantings);
         })
         .catch(error => {
             console.log(error);
@@ -25,11 +25,11 @@ app.post ('/movies', (req,res) => {
 
 
 // RETRIEVE controller ****************************************************
-app.get('/movies', (req, res) => {
-    movies.retrieveMovies()
-        .then(movie => { 
-            if (movie !== null) {
-                res.json(movie);
+app.get('/plantings', (req, res) => {
+    plantings.retrievePlanting()
+        .then(plantings => { 
+            if (plantings !== null) {
+                res.json(plantings);
             } else {
                 res.status(404).json({ Error: 'document not found.' });
             }         
@@ -42,8 +42,8 @@ app.get('/movies', (req, res) => {
 
 
 // RETRIEVE by ID controller
-app.get('/movies/:_id', (req, res) => {
-    movies.retrieveMovieByID(req.params._id)
+app.get('/plantings/:_id', (req, res) => {
+    plantings.retrievePlantingByID(req.params._id)
     .then(movie => { 
         if (movie !== null) {
             res.json(movie);
@@ -60,15 +60,15 @@ app.get('/movies/:_id', (req, res) => {
 
 
 // UPDATE controller ************************************
-app.put('/movies/:_id', (req, res) => {
-    movies.updateMovie(
+app.put('/plantings/:_id', (req, res) => {
+    plantings.updatePlanting(
         req.params._id, 
-        req.body.title, 
-        req.body.year, 
-        req.body.language
+        req.body.location_name, 
+        req.body.bed_length, 
+        req.body.exec_date
     )
-    .then(movie => {
-        res.json(movie);
+    .then(plantings => {
+        res.json(plantings);
     })
     .catch(error => {
         console.log(error);
@@ -78,8 +78,8 @@ app.put('/movies/:_id', (req, res) => {
 
 
 // DELETE Controller ******************************
-app.delete('/movies/:_id', (req, res) => {
-    movies.deleteMovieById(req.params._id)
+app.delete('/plantings/:_id', (req, res) => {
+    plantings.deletePlantingById(req.params._id)
         .then(deletedCount => {
             if (deletedCount === 1) {
                 res.status(204).send();
@@ -93,8 +93,8 @@ app.delete('/movies/:_id', (req, res) => {
         });
 });
 
-app.delete('/movies', (req, res) => {
-    movies.deleteAllMovies()
+app.delete('/plantings', (req, res) => {
+    plantings.deleteAllPlantings()
     .then(deletedCount => {
         if (deletedCount > 0) {
             res.status(204).send();
