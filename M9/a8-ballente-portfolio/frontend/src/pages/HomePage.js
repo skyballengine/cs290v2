@@ -6,6 +6,7 @@ function HomePage() {
         <h2>Eusebius's MERN Project</h2>
         <article>
             <h3>About the project</h3>
+
             <dl>
             <h4>Technologies Explored In This Course</h4>
                         <dt>
@@ -41,11 +42,14 @@ function HomePage() {
                         <dt>
                             <strong>NPM</strong>
                             <dd>
-                                NPM is a package manager for Node.js and facilitates the installation of Javascript packages for building applications.
+                                NPM is a package manager for Node.js and facilitates the installation and management of Javascript packages for building applications.
                             </dd>
                         </dt>
             </dl>
         </article>
+
+        <a href="https://github.com/skyballengine">Eusebius's Github Page</a>
+        {/* <img src="https://avatars.githubusercontent.com/u/96203286?s=400&u=5a9beb0427b367fb33092a0771bce66f7e8ea268&v=4" alt="my family" /> */}
 
         </>
     )
